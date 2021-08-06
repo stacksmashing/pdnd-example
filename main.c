@@ -13,7 +13,7 @@ void display_inputs() {
     char inputs[32] = "";
 
     // Iterate all inputs and display them.
-    for(int i=0; i < 8; i++) {
+    for(int i=7; i >= 0; i--) {
         if(pdnd_in(i)) {
             strcat(inputs, "1 ");
         } else {
@@ -36,7 +36,7 @@ int main() {
     // At this point in time, the buffers are off:
     // Both outputs and inputs are in high-impedance mode.
 
-
+    // Display an image on the screen
     // hello comes from hello.h and was created using make_screen
     // (part of pdnd-lib)
     pdnd_display_screen(pdnd_global_display, &hello);
