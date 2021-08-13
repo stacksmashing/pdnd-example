@@ -20,7 +20,8 @@ void display_inputs() {
             strcat(inputs, "0 ");
         }
     }
-    pprintfxy(0, 40, inputs);
+    va_list ap = {};
+    pprintfxy(0, 40, inputs, ap);
 }
 
 int main() {
@@ -39,12 +40,11 @@ int main() {
     // Display an image on the screen
     // hello comes from hello.h and was created using make_screen
     // (part of pdnd-lib)
-    pdnd_display_screen(pdnd_global_display, &hello);
+    pdnd_display_screen(global_display, &hello);
     sleep_ms(3000);
 
     // Next, we enable the buffers.
     pdnd_enable_buffers(1);
-
 
     while(1) {
         display_inputs();
