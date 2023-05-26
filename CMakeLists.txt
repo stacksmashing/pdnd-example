@@ -33,7 +33,7 @@ target_sources(pdnd_example PRIVATE
         hello.c
         )
 
-target_link_libraries(pdnd_example PRIVATE pico_stdlib hardware_pio)
+target_link_libraries(pdnd_example PRIVATE pico_stdlib hardware_pio hardware_i2c)
 pico_add_extra_outputs(pdnd_example)
 
 # enable usb output, disable uart output
